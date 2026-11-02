@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>克苏鲁五子棋 · Cthulhu Gomoku</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="scene"></canvas>
+
+<!-- 顶部讲解面板：克苏鲁在这里说话 -->
+<div id="dialog" class="dialog"><div class="dialog-title" id="dialogTitle">克苏鲁·楚楚楚</div><div id="dialogText"></div></div>
+
+<!-- 木牌主菜单 -->
+<div id="menu" class="signs">
+  <button class="sign big" data-act="ai" style="--r:-4deg;--d:0s">跟我下？</button>
+  <button class="sign big" data-act="local" style="--r:3deg;--d:.6s">自己玩？</button>
+  <div class="sign-row">
+    <button class="sign" data-act="tutorial" style="--r:-2deg;--d:1.1s">教学</button>
+    <button class="sign" data-act="collection" style="--r:4deg;--d:.3s">典藏</button>
+  </div>
+</div>
+
+<!-- 难度木牌 -->
+<div id="setup" class="signs hidden">
+  <div class="setup-title">选一只对手</div>
+  <div id="levels" class="levels"></div>
+  <div class="sides">
+    <button class="tag side active" data-side="1">执黑 · 先手</button>
+    <button class="tag side" data-side="2">执白 · 后手</button>
+  </div>
+  <div class="sign-row">
+    <button class="sign" data-act="start" style="--r:-2deg">开局！</button>
+    <button class="sign ghosty" data-act="back" style="--r:3deg">算了</button>
+  </div>
+</div>
+
+<!-- 右下角的书：进度与快捷键 -->
+<div id="book" class="book">
+  <div class="page left">
+    <div class="book-title" id="bookTitle">克苏鲁五子棋</div>
+    <div class="book-sub" id="bookSub"></div>
+    <div class="book-progress" id="bookProgress"></div>
+  </div>
+  <div class="page right" id="bookKeys"></div>
+</div>
+
+<!-- 角落的小铜扣 -->
+<div class="corner">
+  <button id="btnSound" class="token" title="音效">🔔</button>
+  <button id="btnMusic" class="token" title="唱片 / 音乐">🎵</button>
+  <button id="btnHelp" class="token" title="规则">？</button>
+</div>
+
+<div id="cauldronTip" class="floating-tip hidden">火锅 · 点我抽盲盒</div>
+
+<!-- 弹窗 -->
+<div id="modal" class="modal hidden">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="js/ai.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

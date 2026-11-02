@@ -1,2 +1,22 @@
-# gomoku-cthulhu
-克苏鲁五子棋 · Cthulhu Gomoku — a browser game with tentacles, expressive stones, tutorials, and collectible rewards.
+# 克苏鲁五子棋 · Cthulhu Gomoku
+
+在线游玩：https://lyken17.github.io/gomoku-cthulhu/
+
+仿《克苏鲁围棋教学》风格的网页五子棋：一只傲娇克苏鲁陪你下棋，用触手落子；软萌棋子会黏连、会做表情；赢来的棋子飞进火锅，可以抽盲盒，收集术语卡、黑胶唱片，还能给触手穿丝袜。
+
+## 怎么玩
+
+直接用浏览器打开 `index.html` 即可（无需服务器、无外部依赖）。
+
+- **跟我下？**：人机对弈，6 档难度（深海幼体 → 旧日支配者），可选执黑 / 执白
+- **自己玩？**：同屏双人对弈
+- **教学**：8 节基础课（连珠、斜线、冲四、活四、挡活三、跳三、四三、三三），把棋子落在幽灵棋子上
+- **典藏 / 火锅**：每 20 颗棋子抽一次盲盒
+
+快捷键：`Z` 悔棋 · `H` 提示（花 2 颗棋子）· `R` 重开 · `Esc` 返回 · `M` 音乐 · 教学中 `A/D/Q/E` 翻页
+
+## 文件
+
+- `index.html` / `style.css`：页面与界面（木牌菜单、讲解面板、书页、卡片）
+- `js/game.js`：场景绘制（Canvas）、棋子表情与黏连、触手动画、教学、火锅盲盒、WebAudio 音效与音乐
+- `js/ai.js`：五子棋 AI（棋形评分 + α-β 搜索 + 连续冲四 VCF），在 Web Worker 中运行，不可用时退回主线程
